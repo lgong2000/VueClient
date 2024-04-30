@@ -1,5 +1,6 @@
 # VueClient
 
+Version 1
 1. Create Project
 # First Time
 npm init vue@lastest
@@ -25,6 +26,16 @@ http://localhost:5173/
 
 4. Open in Visual Studio Code
 code .
+
+Version 2
+Do some clean
+Using Tailwind
+
+# Error - Cannot find module './App.vue' or its corresponding type declarations.ts(2307)
+Extensions - Install "JavaScript and TypeScript Nightly"
+Disable (Workspace)
+Title Bar Search - Show and Run Commands >  - Reload Window
+
 
 
 This template should help get you started developing with Vue 3 in Vite.

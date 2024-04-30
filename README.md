@@ -1,5 +1,32 @@
 # VueClient
 
+1. Create Project
+# First Time
+npm init vue@lastest
+# Later   
+npm create vue@latest
+
+2. GitHub
+cd /d/GitHub/VueClient
+echo "# VueClient" >> README.md
+git init
+git config user.name "lgong2000"
+git config user.email lgong2000@gmail.com
+git add *
+git commit -m "Initial Commit"
+git remote add origin https://github.com/lgong2000/VueClient.git
+git push -u origin master
+
+3. Start
+cd VueClient
+npm install
+npm run dev
+http://localhost:5173/
+
+4. Open in Visual Studio Code
+code .
+
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup

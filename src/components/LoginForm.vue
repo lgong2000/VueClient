@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { userAuthStore } from '@/stores/auth';
 import { reactive } from 'vue';
 
 
@@ -8,7 +9,10 @@ const user = reactive({
    })
 
 function onSubmit() {
-    console.log("form submitted")
+    if(user.username != '' && user.password != '') {
+        console.log(user);
+        userAuthStore().login(user.username, user.password);
+    }
 }
 </script>
 

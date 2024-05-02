@@ -1,3 +1,4 @@
+import { userAuthStore } from '@/stores/auth';
 import DashboardView from '@/views/DashboardView.vue'
 import LoginView from '@/views/LoginView.vue'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -20,10 +21,11 @@ const router = createRouter({
 });
 
 router.beforeEach(async(to)=> {
-  const publicPages = ['/login']
-  const authRequired = !publicPages.includes(to.path)
+  const publicPages = ['/login'];
+  const authRequired = !publicPages.includes(to.path);
+  const auth = userAuthStore();
 
-  if(authRequired) {
+  if(authRequired && !auth.user) {
     return '/login';
   }
 })

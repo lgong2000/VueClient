@@ -60,6 +60,12 @@ App.vue
             password
             Submit button      
 
+## Version 4
+Work with SpringJWT
+pinia - defineStore
+    \stores\auth.ts
+        state, Actions
+
 
 This template should help get you started developing with Vue 3 in Vite.
 

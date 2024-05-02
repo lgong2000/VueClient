@@ -66,6 +66,25 @@ pinia - defineStore
     \stores\auth.ts
         state, Actions
 
+## Version 5
+localStorage - keep the state
+
+## Version 6
+# SpringJWT
+http://localhost:8080/token - POST username and password to get the token
+http://localhost:8080/ - Need authenticated
+# VueClient
+DashboardView.vue 
+    onMounted(async() => {
+        const response = await fetch('http://localhost:8080/', {
+    ......
+    data.value = await response.text();  - data form http://localhost:8080/
+
+    <template>
+        <p>{{data}}</p> - put the data to current page
+
+
+
 
 This template should help get you started developing with Vue 3 in Vite.
 

@@ -5,8 +5,8 @@ export const userAuthStore = defineStore({
     id: 'auth',
     state: () => {
         return {
-            user: null,
-            token: '',
+            user: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')!) : null,
+            token: localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')!) : '',
             returnUrl: '/'
         }
     },
@@ -22,14 +22,21 @@ export const userAuthStore = defineStore({
 
             if(response.status == 200) {
                 const token = await response.text();
+                localStorage.setItem('user', JSON.stringify(username));
+                localStorage.setItem('token', JSON.stringify(token));
                 this.user = username;
                 this.token = token;
+                router.push(this.returnUrl || '/');
+            } else {
+                throw new Error('Invalid credentials');
             }
-            router.push(this.returnUrl || '/');
+            
         },
         logout() {
             this.user = null;
             this.token = '';
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
             router.push('/login');
         }
 

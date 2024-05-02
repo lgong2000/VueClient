@@ -1,6 +1,6 @@
 # VueClient
 
-Version 1
+## Version 1
 1. Create Project
 # First Time
 npm init vue@lastest
@@ -27,7 +27,7 @@ http://localhost:5173/
 4. Open in Visual Studio Code
 code .
 
-Version 2
+## Version 2
 Do some clean
 Using Tailwind
 
@@ -36,6 +36,29 @@ Extensions - Install "JavaScript and TypeScript Nightly"
 Disable (Workspace)
 Title Bar Search - Show and Run Commands >  - Reload Window
 
+## Version 3
+Customize a Dashboad and Login form
+# Vue
+index.html
+    div - app
+    script - /src/main.ts
+main.ts
+    createApp(App)  - App.vue
+    mount('#app') - div app
+App.vue
+    header/nav - RouterLink to "/"
+    main - RouterView
+\router\index.ts
+    component: DashboardView
+    component: LoginView
+    publicPages - authRequired
+\views\DashboardView.vue
+\views\LoginView.vue
+    \components\LoginForm.vue
+        form
+            username
+            password
+            Submit button      
 
 
 This template should help get you started developing with Vue 3 in Vite.
